@@ -1,0 +1,60 @@
+[package]
+name = "playground"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+cc = "1"
+
+[dependencies]
+error-chain = "0.12"
+ansi_term = "0.12.1"
+bitflags = "2.2.1"
+chrono = "0.4.24"
+clap = { version = "4.2.1", features = ["derive", "cargo"] }
+crossbeam = "0.8.2"
+crossbeam-channel = "0.5.8"
+data-encoding = "2.3.3"
+env_logger = "0.10.0"
+flate2 = "1.0.25"
+glob = "0.3.1"
+image = "0.24.6"
+lazy_static = "1.4.0"
+log = "0.4.17"
+log4rs = "1.2.0"
+num = "0.4.0"
+num_cpus = "1.15.0"
+rand = "0.8.5"
+rand_distr = "0.4.3"
+rayon = "1.7.0"
+ring = "0.16.20"
+rusqlite = "0.29.0"
+semver = "1.0.17"
+syslog = "6.1.0"
+tar = "0.4.38"
+threadpool = "1.8.1"
+walkdir = "2.3.3"
+percent-encoding = "2.2.0"
+url = "2.3.1"
+base64 = "0.21.0"
+csv = "1.2.1"
+serde = "1.0.163"
+serde_json = "1.0.96"
+toml = "0.7.4"
+byteorder = "1.4.3"
+reqwest = { version = "0.11.18", features = ["blocking", "json"]}
+same-file = "1.0.6"
+mmap = "0.1.1"
+memmap = "0.7.0"
+regex = "1.8.3"
+ndarray = { version = "0.15.6", features = ["approx"] }
+approx = "0.5.1"
+nalgebra = "0.32.2"
+unicode-segmentation = "1.10.1"
+select = "0.6.0"
+tokio = { version = "1.28.2", features = ["full"] }
+mime = "0.3.17"
+tempfile = "3.6.0"
