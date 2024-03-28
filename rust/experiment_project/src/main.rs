@@ -2,6 +2,7 @@ use std::path::PathBuf;
 
 use clap::{arg, command, value_parser, ArgAction, Command};
 mod cookbook;
+mod core;
 mod string_manip;
 mod trees;
 
@@ -72,6 +73,7 @@ fn main() {
         .subcommand(Command::new("sci").about("Science - math: linear algebra, trigonometry, complex numbers, statistics, miscellaneous"))
         .subcommand(Command::new("text").about("Tex processing"))
         .subcommand(Command::new("web").about("Web programming"))
+        .subcommand(Command::new("core").about("Core language features"))
         .subcommand(
             Command::new("test")
                 .about("does testing things")
@@ -164,5 +166,7 @@ fn main() {
         cookbook::cb_18_text::main();
     } else if matches.subcommand_matches("web").is_some() {
         cookbook::cb_19_web_programming::main();
+    } else if matches.subcommand_matches("core").is_some() {
+        core::main::main();
     }
 }
