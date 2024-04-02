@@ -55,4 +55,27 @@ EOF
 
 }
 
+function gen_csr_fqdn() {
+    cat > csr_config_autogen.cnf << EOF
+FQDN = $1
+ORGNAME = MyOrg
+ALTNAMES = DNS:\$FQDN
+
+[ req ]
+prompt = no
+encrypt_key = no
+distinguished_name = dn
+req_extensions = ext
+
+[ dn ]
+C = PL
+O = \$ORGNAME
+CN = \$FQDN
+
+[ ext ]
+subjectAltName = \$ALTNAMES
+EOF
+    trap "rm -f csr_config_autogen.cnf" EXIT
+}
+
 main
